@@ -18,7 +18,7 @@ The Audio Streaming Player module displays a themable Audio Player in a Drupal f
 
 ## -- Other configurations --
 
- Para cambiar el tema del reproductor se deben seguir los siguientes pasos:
+To change the theme of the player, the following steps must be followed:
  - Select the type of content.
  - Select ```'Manage display'```.
  - In ```Format``` you get ```Chosen theme: ''black, circular or text''```.
