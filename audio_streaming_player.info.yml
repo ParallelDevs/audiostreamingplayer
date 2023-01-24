@@ -1,0 +1,6 @@
+name: 'Audio Streaming Player'
+type: module
+description: 'Provides a themable HTML5 Audio Streaming Player within a Drupal Block.'
+core: 8.x
+package: 'Media'
+core_version_requirement: ^8 || ^9

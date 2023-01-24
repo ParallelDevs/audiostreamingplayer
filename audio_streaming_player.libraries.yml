@@ -1,0 +1,32 @@
+audio_streaming_player_black.css:
+  css:
+    base:
+      src/css/audio_streaming_player_black/audio_streaming_player_black.css: {}
+
+audio_streaming_player_circular.css:
+  css:
+    base:
+      src/css/audio_streaming_player_circular/audio_streaming_player_circular.css: {}
+
+audio_streaming_player_text.css:
+  css:
+    base:
+      src/css/audio_streaming_player_text/audio_streaming_player_text.css: {}
+
+audio_streaming_player.js:
+  js:
+    src/js/audio_streaming_player.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/once
+
+
+
+m3uStreamPlayer:
+  js:
+    src/libraries/m3uStreamPlayer/m3uStreamPlayer.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+
