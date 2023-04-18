@@ -21,12 +21,9 @@ audio_streaming_player.js:
     - core/drupalSettings
     - core/once
 
-
-
 m3uStreamPlayer:
   js:
     src/libraries/m3uStreamPlayer/m3uStreamPlayer.js: {}
   dependencies:
     - core/jquery
     - core/once
-
