@@ -18,25 +18,20 @@ use Drupal\Core\Form\FormStateInterface;
  *   }
  * )
  */
-
 class AudioStreamingPlayerWidget extends WidgetBase {
 
   /**
    * {@inheritdoc}
    */
-
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $value = isset($items[$delta]->value) ? $items[$delta]->value : "";
-
-    $element['url'] =  [
-
+    $element['url'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Enter the Stream URL'),
       '#prefix' => "<span>" . $this->getFieldSetting("moreinfo") . "</span>",
-      '#default_value' => isset($items[$delta]->url) ? $items[$delta]->url : NULL,
+      '#default_value' => $items[$delta]->url ?? NULL,
       '#attributes' => [
         'placeholder' => $this->getSetting('placeholder'),
-      ]
+      ],
     ];
 
     return $element;
@@ -46,9 +41,7 @@ class AudioStreamingPlayerWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public static function defaultSettings() {
-    return [
-      'placeholder' => 'default',
-    ] + parent::defaultSettings();
+    return ['placeholder' => 'default'] + parent::defaultSettings();
   }
 
   /**
@@ -56,7 +49,12 @@ class AudioStreamingPlayerWidget extends WidgetBase {
    */
   public function settingsSummary() {
     $summary = [];
-    $summary[] = $this->t("placeholder text: @placeholder", array("@placeholder" => $this->getSetting("placeholder")));
+    $summary[] = $this->t(
+      "placeholder text: @placeholder",
+      ["@placeholder" => $this->getSetting("placeholder")]
+    );
+
     return $summary;
   }
+
 }

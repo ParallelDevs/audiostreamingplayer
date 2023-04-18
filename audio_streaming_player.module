@@ -5,12 +5,10 @@
  * Render a Streaming Audio Player as a Drupal Field Type.
  */
 
-
 /**
  * Implements hook_theme().
  */
-function audio_streaming_player_theme($existing, $type, $theme, $path) {
-  $hola = 1;
+function audio_streaming_player_theme() {
   return [
     'audio_streaming_player_black' => [
       'variables' => ['test_var' => NULL],
@@ -35,7 +33,7 @@ function audio_streaming_player_preprocess_field(&$variables) {
     $skin_value = $element['#items']->getValue()[0]['skin'];
     $autoplay_value = $element['#items']->getValue()[0]['autoplay'];
 
-    $data_value_field =  [
+    $data_value_field = [
       'data_value_field' => [
         'url' => $link_value,
         'skin' => $skin_value,
@@ -46,4 +44,3 @@ function audio_streaming_player_preprocess_field(&$variables) {
     $variables['#attached']['drupalSettings']['data_value_field'] = $data_value_field['data_value_field'];
   }
 }
-

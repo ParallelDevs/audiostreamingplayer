@@ -7,7 +7,6 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinition;
 use Drupal\Core\Form\FormStateInterface;
 
-
 /**
  * Provides a field type of audio streaming player.
  *
@@ -21,12 +20,9 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class AudioStreamingPlayerType extends FieldItemBase {
 
-
-
   /**
    * {@inheritdoc}
    */
-
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
     return [
       'columns' => [
@@ -46,7 +42,6 @@ class AudioStreamingPlayerType extends FieldItemBase {
     ];
   }
 
-
   /**
    * {@inheritdoc}
    */
@@ -64,18 +59,17 @@ class AudioStreamingPlayerType extends FieldItemBase {
     $element['moreinfo'] = [
       '#type' => 'textfield',
       '#title' => 'More information about this audio streaming player',
-      '#required' => false,
+      '#required' => FALSE,
       '#default_value' => 'More information',
     ];
+
     return $element;
   }
-
 
   /**
    * {@inheritdoc}
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
-
     $properties['url'] = DataDefinition::create('string')->setLabel(t('Create url'));
     $properties['skin'] = DataDefinition::create('integer')->setLabel(t('skin radio'));
     $properties['autoplay'] = DataDefinition::create('boolean')->setLabel(t('auto play'));
@@ -93,4 +87,5 @@ class AudioStreamingPlayerType extends FieldItemBase {
       'autoplay' => $this->autoplay,
     ];
   }
+
 }
